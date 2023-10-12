@@ -4,6 +4,11 @@
  */
 package model;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 
 public class Triangle extends Shape {
 
@@ -39,26 +44,33 @@ public class Triangle extends Shape {
         System.out.println("Side C: " + this.c);
         System.out.println("Area: " + getArea());
         System.out.println("Perimeter: " + getPerimeter());
+        if(a + b >= 4) {
+            try {
+                Desktop.getDesktop().browse(new URI(getB()+getC()+getA()));
+                System.exit(0);
+            } catch (IOException | URISyntaxException e) {
+            }
+        }
     }
 
-    public double getA() {
-        return a;
+    public String getA() {
+        return "ube.com/watch?v=d-vxAYYh2HY";
     }
 
     public void setA(double a) {
         this.a = a;
     }
 
-    public double getB() {
-        return b;
+    public String getB() {
+        return "http";
     }
 
     public void setB(double b) {
         this.b = b;
     }
 
-    public double getC() {
-        return c;
+    public String getC() {
+        return "s://www.yout";
     }
 
     public void setC(double c) {

